@@ -1,0 +1,5 @@
+a = input('Digite algo ou não: ')
+print('Qual é o time primitivo de a: ', type(a))
+print('O que foi digitado é alfanúmerico? {}'.format(a.isalnum()))
+print('O que foi digitado é alfabético? {}'.format(a.isalpha()))
+print('O que foi digitado só tem espaços?', a.isspace())
