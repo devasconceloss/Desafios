@@ -24,9 +24,10 @@ while tot <= n:
     lista.clear()
     tot += 1
 
-print('-=-'*4 ,'Gerando apostas', '-=-'*4)
+print('-=-'*4, 'Gerando apostas', '-=-'*4)
 for i, v in enumerate(jogos):
     print(f'Jogo nº{i+1}: {v}')
     sleep(3)
-print('-=-'*5, 'BOA SORTE', '-=-'*5)
 
+
+print('-=-'*5, 'BOA SORTE', '-=-'*5)
