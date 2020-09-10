@@ -1,6 +1,8 @@
 # Desafios
-Resoluções dos desafios propostos no curso em video de python 3
-O curso está dividido em 3 mundos
+Resoluções dos desafios propostos no curso em video de python 3;
+O curso está dividido em 3 mundos;
+Este é o meu primeiro contato com Python 3, estou resolvendo os desafios
+propostos de acordo com o escopo dos Mundos/Partes
 
 
 Mundo 1 - Fundamentos; 
