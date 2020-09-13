@@ -1,5 +1,5 @@
 # Desafios
-The course is divided into three parts / worlds and is all available on youtube
+The course is divided into three parts / worlds and is all available on youtube,
 the course is in Portuguese but I still recommend it because it has many exercises to practice and learn
 
 1. Download the latest version of python [Download Link](https://www.python.org/downloads/)
