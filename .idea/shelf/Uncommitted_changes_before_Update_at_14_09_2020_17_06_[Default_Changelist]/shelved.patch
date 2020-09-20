@@ -1,0 +1,499 @@
+Index: desafio111/teste.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- desafio111/teste.py	(date 1600113801854)
++++ desafio111/teste.py	(date 1600113801854)
+@@ -0,0 +1,7 @@
++from desafio111.Utilidades import Moeda
++
++num = float(input('Digite um número: '))
++aumento = float(input('Quantos % deseja acrescer? '))
++diminuicao = float(input('Quantos % deseja descrecer? '))
++
++Moeda.resumo(num, aumento, diminuicao)
+Index: desafio107/moeda.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- desafio107/moeda.py	(date 1600111966430)
++++ desafio107/moeda.py	(date 1600111966430)
+@@ -0,0 +1,61 @@
++def dobro(num=int, formatar=False):
++    num *= 2
++    if not formatar:
++         return num
++    else:
++        return real(num)
++
++
++def metade(num=0, formatar=False):
++    num *= 0.5
++    if not formatar:
++         return num
++    else:
++        return real(num)
++
++
++
++def infla(num=0, aumento=0, formatar=False):
++    num += num * (aumento / 100)
++    if not formatar:
++        return num
++    else:
++        return real(num)
++
++
++def dim(num=0, diminuicao=0, formatar=False):
++    num -= num * (diminuicao / 100)
++    if not formatar:
++        return num
++    else:
++        return real(num)
++
++
++def real(num=0, cambio='R$'):
++    return f'{cambio}{num}'.replace('.', ',')
++
++
++def resumo(num=0, aumento=0, diminuicao=0, cambio='R$'):
++    """
++
++    :param num: Valor a ser convertido em real
++    :param aumento: Acréscimo ao valor digitado anteriormente
++    :param diminuicao: Decréscimo ao valor digitado anteriormente
++    :param cambio: R$
++    :return:
++    """
++    double = num*2
++    half = num*0.5
++    aume = num + (num * aumento/100)
++    dimi = num - (num * diminuicao/100)
++
++    titulo = 'Análise'
++    print('--' * 20)
++    print(titulo.center(40))
++    print('--' * 20)
++    print(f'\nPreço digitado: {cambio}{num}'
++          f'\nDobro: {cambio}{double}'
++          f'\nMetade: {cambio}{half}'
++          f'\nAumentando {aumento}%: {cambio}{aume}'
++          f'\nDiminuindo {diminuicao}%: {cambio}{dimi}'.replace('.', ','))
++
+Index: desafio110/teste.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- desafio110/teste.py	(date 1600112610794)
++++ desafio110/teste.py	(date 1600112610794)
+@@ -0,0 +1,4 @@
++from desafio110 import Moeda
++
++Moeda.resumo(2000, 50, 75)
++Moeda.resumo(3000, 10, 22)
+\ No newline at end of file
+Index: desafio109/moeda.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- desafio109/moeda.py	(date 1600111966430)
++++ desafio109/moeda.py	(date 1600111966430)
+@@ -0,0 +1,61 @@
++def dobro(num=int, formatar=False):
++    num *= 2
++    if not formatar:
++         return num
++    else:
++        return real(num)
++
++
++def metade(num=0, formatar=False):
++    num *= 0.5
++    if not formatar:
++         return num
++    else:
++        return real(num)
++
++
++
++def infla(num=0, aumento=0, formatar=False):
++    num += num * (aumento / 100)
++    if not formatar:
++        return num
++    else:
++        return real(num)
++
++
++def dim(num=0, diminuicao=0, formatar=False):
++    num -= num * (diminuicao / 100)
++    if not formatar:
++        return num
++    else:
++        return real(num)
++
++
++def real(num=0, cambio='R$'):
++    return f'{cambio}{num}'.replace('.', ',')
++
++
++def resumo(num=0, aumento=0, diminuicao=0, cambio='R$'):
++    """
++
++    :param num: Valor a ser convertido em real
++    :param aumento: Acréscimo ao valor digitado anteriormente
++    :param diminuicao: Decréscimo ao valor digitado anteriormente
++    :param cambio: R$
++    :return:
++    """
++    double = num*2
++    half = num*0.5
++    aume = num + (num * aumento/100)
++    dimi = num - (num * diminuicao/100)
++
++    titulo = 'Análise'
++    print('--' * 20)
++    print(titulo.center(40))
++    print('--' * 20)
++    print(f'\nPreço digitado: {cambio}{num}'
++          f'\nDobro: {cambio}{double}'
++          f'\nMetade: {cambio}{half}'
++          f'\nAumentando {aumento}%: {cambio}{aume}'
++          f'\nDiminuindo {diminuicao}%: {cambio}{dimi}'.replace('.', ','))
++
+Index: desafio108/teste.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- desafio108/teste.py	(date 1600112751439)
++++ desafio108/teste.py	(date 1600112751439)
+@@ -0,0 +1,10 @@
++from desafio108 import Moeda
++num = float(input('Digite um número: '))
++aum = float(input('Quantos % deseja acrescer? '))
++dim = float(input('Quantos % deseja descrecer? '))
++
++print(f'\nO número digitado foi {Moeda.real(num)};'
++      f'\nO dobro equivale á {Moeda.real(Moeda.dobro(num))};'
++      f'\nA metade equivale á: {Moeda.real(Moeda.metade(num))};'
++      f'\nAcrescendo {aum}% temos: {Moeda.real(Moeda.infla(num, aum))};'
++      f'\nDiminuindo {dim}% temos: {Moeda.real(Moeda.dim(num, dim))}.')
+Index: desafio110/moeda.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- desafio110/moeda.py	(date 1600111966430)
++++ desafio110/moeda.py	(date 1600111966430)
+@@ -0,0 +1,61 @@
++def dobro(num=int, formatar=False):
++    num *= 2
++    if not formatar:
++         return num
++    else:
++        return real(num)
++
++
++def metade(num=0, formatar=False):
++    num *= 0.5
++    if not formatar:
++         return num
++    else:
++        return real(num)
++
++
++
++def infla(num=0, aumento=0, formatar=False):
++    num += num * (aumento / 100)
++    if not formatar:
++        return num
++    else:
++        return real(num)
++
++
++def dim(num=0, diminuicao=0, formatar=False):
++    num -= num * (diminuicao / 100)
++    if not formatar:
++        return num
++    else:
++        return real(num)
++
++
++def real(num=0, cambio='R$'):
++    return f'{cambio}{num}'.replace('.', ',')
++
++
++def resumo(num=0, aumento=0, diminuicao=0, cambio='R$'):
++    """
++
++    :param num: Valor a ser convertido em real
++    :param aumento: Acréscimo ao valor digitado anteriormente
++    :param diminuicao: Decréscimo ao valor digitado anteriormente
++    :param cambio: R$
++    :return:
++    """
++    double = num*2
++    half = num*0.5
++    aume = num + (num * aumento/100)
++    dimi = num - (num * diminuicao/100)
++
++    titulo = 'Análise'
++    print('--' * 20)
++    print(titulo.center(40))
++    print('--' * 20)
++    print(f'\nPreço digitado: {cambio}{num}'
++          f'\nDobro: {cambio}{double}'
++          f'\nMetade: {cambio}{half}'
++          f'\nAumentando {aumento}%: {cambio}{aume}'
++          f'\nDiminuindo {diminuicao}%: {cambio}{dimi}'.replace('.', ','))
++
+Index: desafio108/moeda.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- desafio108/moeda.py	(date 1600111966430)
++++ desafio108/moeda.py	(date 1600111966430)
+@@ -0,0 +1,61 @@
++def dobro(num=int, formatar=False):
++    num *= 2
++    if not formatar:
++         return num
++    else:
++        return real(num)
++
++
++def metade(num=0, formatar=False):
++    num *= 0.5
++    if not formatar:
++         return num
++    else:
++        return real(num)
++
++
++
++def infla(num=0, aumento=0, formatar=False):
++    num += num * (aumento / 100)
++    if not formatar:
++        return num
++    else:
++        return real(num)
++
++
++def dim(num=0, diminuicao=0, formatar=False):
++    num -= num * (diminuicao / 100)
++    if not formatar:
++        return num
++    else:
++        return real(num)
++
++
++def real(num=0, cambio='R$'):
++    return f'{cambio}{num}'.replace('.', ',')
++
++
++def resumo(num=0, aumento=0, diminuicao=0, cambio='R$'):
++    """
++
++    :param num: Valor a ser convertido em real
++    :param aumento: Acréscimo ao valor digitado anteriormente
++    :param diminuicao: Decréscimo ao valor digitado anteriormente
++    :param cambio: R$
++    :return:
++    """
++    double = num*2
++    half = num*0.5
++    aume = num + (num * aumento/100)
++    dimi = num - (num * diminuicao/100)
++
++    titulo = 'Análise'
++    print('--' * 20)
++    print(titulo.center(40))
++    print('--' * 20)
++    print(f'\nPreço digitado: {cambio}{num}'
++          f'\nDobro: {cambio}{double}'
++          f'\nMetade: {cambio}{half}'
++          f'\nAumentando {aumento}%: {cambio}{aume}'
++          f'\nDiminuindo {diminuicao}%: {cambio}{dimi}'.replace('.', ','))
++
+Index: desafio111/Utilidades/Moeda/__init__.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- desafio111/Utilidades/Moeda/__init__.py	(date 1600113063759)
++++ desafio111/Utilidades/Moeda/__init__.py	(date 1600113063759)
+@@ -0,0 +1,61 @@
++def dobro(num=int, formatar=False):
++    num *= 2
++    if not formatar:
++         return num
++    else:
++        return real(num)
++
++
++def metade(num=0, formatar=False):
++    num *= 0.5
++    if not formatar:
++         return num
++    else:
++        return real(num)
++
++
++
++def infla(num=0, aumento=0, formatar=False):
++    num += num * (aumento / 100)
++    if not formatar:
++        return num
++    else:
++        return real(num)
++
++
++def dim(num=0, diminuicao=0, formatar=False):
++    num -= num * (diminuicao / 100)
++    if not formatar:
++        return num
++    else:
++        return real(num)
++
++
++def real(num=0, cambio='R$'):
++    return f'{cambio}{num}'.replace('.', ',')
++
++
++def resumo(num=0, aumento=0, diminuicao=0, cambio='R$'):
++    """
++
++    :param num: Valor a ser convertido em real
++    :param aumento: Acréscimo ao valor digitado anteriormente
++    :param diminuicao: Decréscimo ao valor digitado anteriormente
++    :param cambio: R$
++    :return:
++    """
++    double = num*2
++    half = num*0.5
++    aume = num + (num * aumento/100)
++    dimi = num - (num * diminuicao/100)
++
++    titulo = 'Análise'
++    print('--' * 20)
++    print(titulo.center(40))
++    print('--' * 20)
++    print(f'\nPreço digitado: {cambio}{num}'
++          f'\nDobro: {cambio}{double}'
++          f'\nMetade: {cambio}{half}'
++          f'\nAumentando {aumento}%: {cambio}{aume}'
++          f'\nDiminuindo {diminuicao}%: {cambio}{dimi}'.replace('.', ','))
++
+Index: desafio107/teste.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- desafio107/teste.py	(date 1600112851496)
++++ desafio107/teste.py	(date 1600112851496)
+@@ -0,0 +1,7 @@
++from desafio107 import Moeda
++num = float(input('Digite um número: '))
++aum = float(input('Quantos % deseja acrescer? '))
++dim = float(input('Quantos % deseja descrecer? '))
++
++print(f'\nO número digitado foi {num}, o dobro equivale á {Moeda.dobro(num)}, a metade equivale á: {Moeda.metade(num)},'
++      f' acrescendo {aum}% temos: {Moeda.infla(num, aum)}, diminuindo {dim}% temos: {Moeda.dim(num, dim)}')
+Index: Moeda/__init__.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Moeda/__init__.py	(date 1600041961232)
++++ Moeda/__init__.py	(date 1600041961232)
+@@ -0,0 +1,61 @@
++def dobro(num=int, formatar=False):
++    num *= 2
++    if not formatar:
++         return num
++    else:
++        return real(num)
++
++
++def metade(num=0, formatar=False):
++    num *= 0.5
++    if not formatar:
++         return num
++    else:
++        return real(num)
++
++
++
++def infla(num=0, aumento=0, formatar=False):
++    num += num * (aumento / 100)
++    if not formatar:
++        return num
++    else:
++        return real(num)
++
++
++def dim(num=0, diminuicao=0, formatar=False):
++    num -= num * (diminuicao / 100)
++    if not formatar:
++        return num
++    else:
++        return real(num)
++
++
++def real(num=0, cambio='R$'):
++    return f'{cambio}{num}'.replace('.', ',')
++
++
++def resumo(num=0, aumento=0, diminuicao=0, cambio='R$'):
++    """
++
++    :param num: Valor a ser convertido em real
++    :param aumento: Acréscimo ao valor digitado anteriormente
++    :param diminuicao: Decréscimo ao valor digitado anteriormente
++    :param cambio: R$
++    :return:
++    """
++    double = num*2
++    half = num*0.5
++    aume = num + (num * aumento/100)
++    dimi = num - (num * diminuicao/100)
++
++    titulo = 'Análise'
++    print('--' * 20)
++    print(titulo.center(40))
++    print('--' * 20)
++    print(f'\nPreço digitado: {cambio}{num}'
++          f'\nDobro: {cambio}{double}'
++          f'\nMetade: {cambio}{half}'
++          f'\nAumentando {aumento}%: {cambio}{aume}'
++          f'\nDiminuindo {diminuicao}%: {cambio}{dimi}'.replace('.', ','))
++
+Index: desafio109/teste.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- desafio109/teste.py	(date 1600112390942)
++++ desafio109/teste.py	(date 1600112390942)
+@@ -0,0 +1,11 @@
++from desafio109 import Moeda
++num = float(input('Digite um número: '))
++aum = float(input('Quantos % deseja acrescer? '))
++dim = float(input('Quantos % deseja descrecer? '))
++
++
++print(f'\nO número digitado foi {Moeda.real(num)};'
++      f'\nO dobro equivale á {Moeda.dobro(num, False)};'
++      f'\nA metade equivale á: {Moeda.metade(num, False)};'
++      f'\nAcrescendo {aum}% temos: {Moeda.infla(num, aum, False)};'
++      f'\nDiminuindo {dim}% temos: {Moeda.dim(num, dim, False)}')
+\ No newline at end of file
+diff --git desafio111/Utilidades/Dados/__init__.py desafio111/Utilidades/Dados/__init__.py
+new file mode 100644
+diff --git desafio111/Utilidades/__init__.py desafio111/Utilidades/__init__.py
+new file mode 100644
