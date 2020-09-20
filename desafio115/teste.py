@@ -2,6 +2,7 @@
 from desafio115.Data.dd import leia_int
 arquivo = 'dados.txt'
 
+
 def arquivo_existe(arquivo):
     try:
         s = open(arquivo, 'rt')
@@ -11,15 +12,15 @@ def arquivo_existe(arquivo):
     else:
         return True
 
+
 def criar_arquivo(arquivo):
     try:
         s = open(arquivo, 'wt+')
         s.close()
-    except:
+    except FileExistsError:
         print('Houve um erro na criação')
     else:
         print(f'O arquivo {arquivo} foi criado.')
-
 
 
 def armazenando_dados(arquivo, nome='Inexistente', idade=0):
@@ -33,17 +34,14 @@ def armazenando_dados(arquivo, nome='Inexistente', idade=0):
         print('Dados cadastrados com sucesso.')
 
 
-
-
 def lendo_dados(arquivo):
     try:
         s = open(arquivo, 'rt')
-    except:
+    except FileNotFoundError:
         print('Erro ao ler o banco de dados.')
     else:
         print('Pessoas cadastradas')
         print(s.readlines())
-
 
 
 def cabecalho():
@@ -73,6 +71,3 @@ def cabecalho():
         else:
             print('\nEscolha uma opção válida.')
             return cabecalho()
-
-
-
